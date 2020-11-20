@@ -17,7 +17,7 @@ pipeline {
     stage ('deploy to kops')
     {
            steps{
-             sh "cd /root/myproject/ && kubectl create -f pod.yml"
+             sh "kubectl create -f pod.yml"
                     
                 }
     }
