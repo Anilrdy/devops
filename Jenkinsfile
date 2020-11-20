@@ -13,9 +13,13 @@ pipeline {
       steps{
         sh "docker push anilrdy208/appchenewimage:v1"
            }
-
-
-
+    }
+    stage ('deploy to kops')
+    {
+           steps{
+             sh "cd /root/myproject/ && kubectl create -f pod.yml"
+                    
+                }
     }
   }
 
