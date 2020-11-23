@@ -17,12 +17,10 @@ pipeline {
     stage ('deploy to kops')
     {
            steps{
-//           sshagent(['sshec2']) {
-//           sh "scp -o StrictHostKeyChecking=no pod.yml ec2-user@18.219.47.170:/tmp/"
-//           sh "ssh ec2-user@18.219.47.170 kubectl create -f /tmp/pod.yml"
-//               }  
-             sh "kubectl create -f pod.yml"                    
-               sh "whoami && id $USER"
+           sshagent(['kops_user']) {
+           sh "scp -o StrictHostKeyChecking=no pod.yml anil@13.59.95.253:/home/anil/"
+           sh "ssh anil@13.59.95.253 kubectl create -f /home/anil/pod.yml"
+               }  
                }
     }
   }
