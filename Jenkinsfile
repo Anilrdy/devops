@@ -18,8 +18,8 @@ pipeline {
     {
            steps{
            sshagent(['kops_user']) {
-           sh "scp -o StrictHostKeyChecking=no pod.yml anil@13.59.95.253:/home/anil/"
-           sh "ssh anil@13.59.95.253 kubectl create -f /home/anil/pod.yml"
+           sh "scp -o StrictHostKeyChecking=no pod.yml anil@3.138.111.153:/home/anil/"
+           sh "ssh anil@3.138.111.153 kubectl create -f /home/anil/pod.yml"
                }  
                }
     }
