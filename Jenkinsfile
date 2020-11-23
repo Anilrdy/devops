@@ -21,8 +21,9 @@ pipeline {
 //           sh "scp -o StrictHostKeyChecking=no pod.yml ec2-user@18.219.47.170:/tmp/"
 //           sh "ssh ec2-user@18.219.47.170 kubectl create -f /tmp/pod.yml"
 //               }  
-             sh "kubectl create -f pod.yml"                    
-                }
+//             sh "kubectl create -f pod.yml"                    
+               sh "whoami && id $USER"
+               }
     }
   }
 
