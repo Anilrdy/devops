@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: kopspod
   labels: 
-    app:myapp
+    app: myapp
 spec:
   containers:
   - name: apache
