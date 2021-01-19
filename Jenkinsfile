@@ -13,5 +13,6 @@ pipeline {
                       sh "docker push tomcatlatest:v1latest"
                                                                                                     } 
                         }
+                        }
                 }  
          }
