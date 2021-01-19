@@ -9,7 +9,7 @@ pipeline {
                 stage ("push the docker file") {
                   steps {
                        withCredentials([string(credentialsId: 'Dockerhub', variable: 'dockerhub')]) {
-                      sh "docker login -u anilrdy208 -p ${"dockerhub"}
+                      sh "docker login -u anilrdy208 -p ${dockerhub}"
                       sh "docker push tomcatlatest:v1latest"
                                                                                                     } 
                         }
