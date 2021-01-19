@@ -18,13 +18,13 @@ pipeline {
     {
            steps{
            sshagent(['udeploy']) {
-           sh "scp -o StrictHostKeyChecking=no pod.yml ec2-user@18.222.232.50:/home/ec2-user/"
+           sh "scp -o StrictHostKeyChecking=no pod.yml ec2-user@172.31.44.21:/home/ec2-user/"
            script {
              try{
-               sh "ssh ec2-user@18.222.232.50 kubectl create -f /home/ec2-user/pod.yml"
+               sh "ssh ec2-user@172.31.44.21 kubectl create -f /home/ec2-user/pod.yml"
                 }
              catch(error){
-                         sh "ssh ec2-user@18.222.232.50 kubectl apply -f /home/ec2-user/pod.yml"
+                         sh "ssh ec2-user@172.31.44.21 kubectl apply -f /home/ec2-user/pod.yml"
                          }
                   }
            
